@@ -1,32 +1,41 @@
 'use strict'
 
 var inputNumerador;
+var numerador;
 var inputDenominador;
+var denominador;
 var botonSimplificar;
+var botonReiniciar;
+var resultadoNumerador;
+var resultadoDenominador;
 var camposVacios;
 var numeroInvalido;
-// TODO Sera eliminada despues
-var res;
 
 // Iniciamos scripts
 window.onload = () => {
    obtenerDocumento();
    botonSimplificar.onclick = () => simplificar();
+   botonReiniciar.onclick = () => reiniciar();
+   resultadoNumerador.hidden = true;
+   resultadoDenominador.hidden = true;
+   botonReiniciar.hidden = true;
    camposVacios = true;
-   numeroInvalido = false;
+   numeroInvalido = true;
 }
 
 function obtenerDocumento() {
    inputNumerador = document.querySelector('.caja-resolvedor__resolucion--numerador');
    inputDenominador = document.querySelector('.caja-resolvedor__resolucion--denominador');
    botonSimplificar = document.querySelector('.caja-resolvedor__resolucion--resolver');
+   resultadoNumerador = document.querySelector('.caja-resolvedor__resultado--numerador')
+   resultadoDenominador = document.querySelector('.caja-resolvedor__resultado--denominador');
+   botonReiniciar = document.querySelector('.caja-resolvedor__resultado--reiniciar');
 }
 
 function simplificar() {
    if (listoParaSimplificar()) {
       realizarAlgoritmo();
       mostrarResultado();
-      reiniciar();
    } else {
       mostrarError();
       reiniciar();
@@ -34,32 +43,47 @@ function simplificar() {
 }
 
 function listoParaSimplificar() {
-   if(inputNumerador.value == '' | inputDenominador.value == '' ) {
+   if(inputNumerador.value == '' || inputDenominador.value == '' ) {
       camposVacios = true;
    } else {
       camposVacios = false;
    }
-   return !camposVacios;
+   if(parseInt(inputNumerador.value) > 9999 || parseInt(inputDenominador.value) > 9999) {
+      numeroInvalido = true;
+   } else {
+      numeroInvalido = false;
+   }
+   return !camposVacios && !numeroInvalido;
 }
 
 function realizarAlgoritmo() {
    // Usamos algoritmo de euclides(Para conseguir el MCD de los dos numeros)
-   let numerador = inputNumerador.value;
-   let denominador = inputDenominador.value;
-   res = algoritmoEuclides.calcularMCD(numerador, denominador);
+   numerador = inputNumerador.value;
+   denominador = inputDenominador.value;
+   let mcd = algoritmoEuclides.calcularMCD(numerador, denominador);
+   // Simplificamos
+   numerador /= mcd;
+   denominador /= mcd;
 }
 
 function mostrarResultado() {
-   // TODO: Usados como prueba
-   alert(res);
+   resultadoNumerador.hidden = false;
+   resultadoDenominador.hidden = false;
+   botonReiniciar.hidden = false;
+   resultadoNumerador.innerHTML = numerador;
+   resultadoDenominador.innerHTML = denominador;
 }
 
 function reiniciar() {
+   resultadoNumerador.hidden = true;
+   resultadoDenominador.hidden = true;
+   botonReiniciar.hidden = true;
    inputNumerador.value = '';
    inputDenominador.value = '';
+   numerador = 0;
+   denominador = 0;
 }
 
 function mostrarError() {
-   // TODO: Usados como prueba
-   alert('Ingrese campos.');
+   alert('Ingrese campos validos');
 }

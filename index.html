@@ -12,8 +12,8 @@
   <body>
     <!-- TODO: Hacer etiquetas para mostrar los resultados -->
     <header>
-      <img src="img/web_icon.ico" alt="SimpleFract" />
-      <i>SimpleFract</i>
+        SimpleFract
+        <img src="img/web_icon.ico" alt="SimpleFract" />
     </header>
     <aside>
       <div class="hacia-explicacion">
@@ -49,22 +49,31 @@
               type="number"
               value="78"
             />
-            <label class="caja-resolvedor__resolucion--numerador_mensaje"
-              >Aqui el numerador</label
-            >
+            <span class="caja-resolvedor__resolucion--numerador_mensaje">
+              Aqui el numerador
+            </span>
             <input
               class="caja-resolvedor__resolucion--denominador"
               type="number"
             />
-            <label class="caja-resolvedor__resolucion--denominador_mensaje"
-              >Aqui el denominador</label
-            >
+            <span class="caja-resolvedor__resolucion--denominador_mensaje">
+              Aqui el denominador
+            </span>
             <input
               class="caja-resolvedor__resolucion--resolver"
               type="button"
               value="¡Simplificar!"
             />
           </div>
+        </div>
+        <div class="caja-resolvedor__resultado">
+          <span class="caja-resolvedor__resultado--numerador"> </span>
+          <span class="caja-resolvedor__resultado--denominador"> </span>
+          <input
+            class="caja-resolvedor__resultado--reiniciar"
+            type="button"
+            value="Volver a simplificar"
+          />
         </div>
       </section>
     </article>
