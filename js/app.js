@@ -19,14 +19,15 @@ window.onload = () => {
    resultadoNumerador.hidden = true;
    resultadoDenominador.hidden = true;
    botonReiniciar.hidden = true;
+   document.querySelector('main').style.opacity = '1';
    camposVacios = true;
    numeroInvalido = true;
 }
 
 function obtenerDocumento() {
-   inputNumerador = document.querySelector('.resolvedor__resolucion--numerador');
-   inputDenominador = document.querySelector('.resolvedor__resolucion--denominador');
-   botonSimplificar = document.querySelector('.resolvedor__resolucion--resolver');
+   inputNumerador = document.querySelector('.input-numerador');
+   inputDenominador = document.querySelector('.input-denominador');
+   botonSimplificar = document.querySelector('.boton-resolver');
    resultadoNumerador = document.querySelector('.resolvedor__resultado--numerador')
    resultadoDenominador = document.querySelector('.resolvedor__resultado--denominador');
    botonReiniciar = document.querySelector('.resolvedor__resultado--reiniciar');
