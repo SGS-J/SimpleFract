@@ -24,12 +24,12 @@ window.onload = () => {
 }
 
 function obtenerDocumento() {
-   inputNumerador = document.querySelector('.caja-resolvedor__resolucion--numerador');
-   inputDenominador = document.querySelector('.caja-resolvedor__resolucion--denominador');
-   botonSimplificar = document.querySelector('.caja-resolvedor__resolucion--resolver');
-   resultadoNumerador = document.querySelector('.caja-resolvedor__resultado--numerador')
-   resultadoDenominador = document.querySelector('.caja-resolvedor__resultado--denominador');
-   botonReiniciar = document.querySelector('.caja-resolvedor__resultado--reiniciar');
+   inputNumerador = document.querySelector('.resolvedor__resolucion--numerador');
+   inputDenominador = document.querySelector('.resolvedor__resolucion--denominador');
+   botonSimplificar = document.querySelector('.resolvedor__resolucion--resolver');
+   resultadoNumerador = document.querySelector('.resolvedor__resultado--numerador')
+   resultadoDenominador = document.querySelector('.resolvedor__resultado--denominador');
+   botonReiniciar = document.querySelector('.resolvedor__resultado--reiniciar');
 }
 
 function simplificar() {
@@ -87,3 +87,24 @@ function reiniciar() {
 function mostrarError() {
    alert('Ingrese campos validos');
 }
+
+class AlgoritmoEuclides {
+   constructor() {
+     this.calcularMCD = (numeroA, numeroB) => {
+       // Primeros organizamos los numeros de mayor a menor si es necesario
+       if (numeroA < numeroB) {
+         numeroA = numeroA + numeroB;
+         numeroB = numeroA - numeroB;
+         numeroA = numeroA - numeroB;
+       }
+       // Luego aplicamos recursion
+       if (numeroA % numeroB == 0) {
+         return numeroB;
+       } else {
+         return this.calcularMCD(numeroB, numeroA % numeroB);
+       }
+     };
+   }
+ }
+ 
+ const algoritmoEuclides = new AlgoritmoEuclides();
