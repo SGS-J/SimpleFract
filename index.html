@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="icon" href="img/web_icon.ico" />
+    <title>SimpleFract</title>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <header>
+      SimpleFract
+      <img src="img/web_icon.ico" alt="SimpleFract_logo" />
+    </header>
+
+    <aside>
+      <button class="boton hacia-explicacion">¿Como funciona?</button>
+      <button class="boton hacia-simplificador">Simplificar</button>
+    </aside>
+    
+    <main>
+      <section id="introducion">
+        <h1 class="titulo">¡Bienvenido a SimpleFract!</h1>
+        <p class="texto-bienvenida">
+          <i><strong>SimpleFract</strong></i> es una pagina encargada de hacerte
+          mas facil la tarea de simplificar fracciones. Colocas tu fracción y
+          con un solo click ya esta simplificada, ¡Tan facil como eso!.
+        </p>
+      </section>
+      <section id="resolvedor">
+        <div class="resolvedor__instrucciones">
+          <b>Instrucciones:</b>
+          <ol>
+            <li>
+              Coloca el numerador y el denominador donde se te indica.
+            </li>
+            <li>Presiona simplificar para resolver la fracción.</li>
+          </ol>
+        </div>
+        <div class="resolvedor__resolucion">
+          <input
+            class="resolvedor__resolucion--input input-numerador"
+            type="number"
+            value="78"
+          />
+          <span class="resolvedor__resolucion--mensaje mensaje-numerador">
+            Numerador
+          </span>
+          <input
+            class="resolvedor__resolucion--input input-denominador"
+            type="number"
+          />
+          <span class="resolvedor__resolucion--mensaje mensaje-denominador">
+            Denominador
+          </span>
+          <input
+            class="resolvedor__resolucion--input boton-resolver"
+            type="button"
+            value="¡Simplificar!"
+          />
+        </div>
+        <div class="resolvedor__resultado">
+          <span class="resolvedor__resultado--numerador"> </span>
+          <span class="resolvedor__resultado--denominador"> </span>
+          <input
+            class="resolvedor__resultado--reiniciar"
+            type="button"
+            value="Volver a simplificar"
+          />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <img src="img/web_icon.ico" alt="SimpleFrac_logo" />
+    </footer>
+  </body>
+</html>
