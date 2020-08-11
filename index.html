@@ -8,6 +8,7 @@
     <link rel="icon" href="img/web_icon.ico" />
     <title>SimpleFract</title>
     <script src="js/app.js"></script>
+    <script src="js/events.js"></script>
   </head>
   <body>
     <header>
@@ -42,15 +43,16 @@
         <div class="resolvedor__resolucion">
           <input
             class="resolvedor__resolucion--input input-numerador"
-            type="number"
+            type="text"
             value="78"
+            pattern="[0-9]"
           />
           <span class="resolvedor__resolucion--mensaje mensaje-numerador">
             Numerador
           </span>
           <input
             class="resolvedor__resolucion--input input-denominador"
-            type="number"
+            type="text"
           />
           <span class="resolvedor__resolucion--mensaje mensaje-denominador">
             Denominador
@@ -62,8 +64,8 @@
           />
         </div>
         <div class="resolvedor__resultado">
-          <span class="resolvedor__resultado--numerador"> </span>
-          <span class="resolvedor__resultado--denominador"> </span>
+          <span class="resolvedor__resultado-span resolvedor__resultado--numerador"> </span>
+          <span class="resolvedor__resultado-span resolvedor__resultado--denominador"> </span>
           <input
             class="resolvedor__resultado--reiniciar"
             type="button"
@@ -72,8 +74,10 @@
         </div>
       </section>
     </main>
+
     <footer>
-      <img src="img/web_icon.ico" alt="SimpleFrac_logo" />
+      <img src="img/web_icon.ico" alt="SimpleFract_logo" />
     </footer>
+
   </body>
 </html>
