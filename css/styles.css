@@ -191,7 +191,7 @@ footer img {
 @media only screen and (min-width: 1200px) {
    body {
       grid-template-rows: 7vh 1fr 7vh;
-      font-size: 1vw;
+      font-size: 1.2vw;
    }
 
    aside .boton {
