@@ -169,7 +169,7 @@ main .boton-resolver {
 }
 
 main .boton-resolver:hover {
-   background: linear-gradient(25deg, var(--azul) 50%, var(--azul-claro) 80%);
+   background: linear-gradient(220deg, var(--azul-oscuro) 50%, var(--azul) 80%);
    border: 2px inset var(--azul-claro);
 }
 
