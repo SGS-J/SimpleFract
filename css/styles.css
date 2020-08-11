@@ -122,6 +122,7 @@ main .input-numerador:focus, .input-denominador:focus {
 
 main .input-numerador:focus ~ .mensaje-numerador,
 main .input-denominador:focus ~ .mensaje-denominador{
+   -moz-animation: anim-mensaje alternate 1.2s infinite ease-out;
    animation: anim-mensaje alternate 1.2s infinite ease-out;
 }
 
@@ -169,7 +170,7 @@ main .boton-resolver {
 }
 
 main .boton-resolver:hover {
-   background: linear-gradient(25deg, var(--azul) 50%, var(--azul-claro) 80%);
+   background: linear-gradient(25deg, var(--azul) 25%, var(--azul-oscuro)) 50%;
    border: 2px inset var(--azul-claro);
 }
 
