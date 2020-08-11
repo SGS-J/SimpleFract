@@ -1,7 +1,5 @@
 "use strict";
 
-const evento = new Evento();
-
 class Evento {
   constructor() {
     this.simplificar = () => {
@@ -14,8 +12,10 @@ class Evento {
       }
     };
     this.reiniciar = () => reiniciar();
+    this.limitarSoloNumeros = (e) => utiles.limitadorANumeros(e);
   }
 }
+const evento = new Evento();
 
 function listoParaSimplificar() {
   if (inputNumerador.value == "" || inputDenominador.value == "") {
