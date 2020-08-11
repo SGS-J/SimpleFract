@@ -13,8 +13,36 @@ class Evento {
     };
     this.reiniciar = () => reiniciar();
     this.limitarSoloNumeros = (e) => utiles.limitadorANumeros(e);
+    this.verificarCopia = (e) => utiles.verificadorDeCopia(e);
   }
 }
+
+class Utiles {
+  constructor() {
+    this.limitadorANumeros = (e) => {
+      let letraValida =
+        (e.charCode >= 48 && e.charCode <= 57) || e.charCode == 45;
+      if (!letraValida) {
+        e.preventDefault();
+      }
+    };
+    this.verificadorDeCopia = (e) => {
+      let copiaActual = e.clipboardData.getData("text");
+      for (let i = 0; i < copiaActual.length; i++) {
+        const codigoLetra = copiaActual.charAt(i).charCodeAt(0);
+        let letraValida =
+          (codigoLetra >= 48 && codigoLetra <= 57) ||
+          codigoLetra == 45;
+        if (!letraValida) {
+          e.preventDefault();
+          break;
+        }
+      }
+    };
+  }
+}
+
+const utiles = new Utiles();
 const evento = new Evento();
 
 function listoParaSimplificar() {
