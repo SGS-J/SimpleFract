@@ -69,7 +69,7 @@ aside .boton {
 
 main {
    grid-column: span 1;
-   padding: 4em 12em 2em 8em;
+   padding: 7vh 15vw 3vh 5vw;
    opacity: 0;
    transition: opacity 1.2s;
 }
@@ -110,8 +110,8 @@ main .resolvedor__resolucion {
 main .resolvedor__resolucion--input {
    padding: 10px;
    outline: 1px double var(--azul-oscuro);
-   border-left: 10px solid var(--azul-oscuro);
-   font-size: 2em;
+   border-left: 1vw solid var(--azul-oscuro);
+   font-size: 1.5em;
    transition: border .3s;
    color: var(--azul);
 }
@@ -122,7 +122,6 @@ main .input-numerador:focus, .input-denominador:focus {
 
 main .input-numerador:focus ~ .mensaje-numerador,
 main .input-denominador:focus ~ .mensaje-denominador{
-   -moz-animation: anim-mensaje alternate 1.2s infinite ease-out;
    animation: anim-mensaje alternate 1.2s infinite ease-out;
 }
 
@@ -160,7 +159,7 @@ main .boton-resolver {
    font-family: consolas;
    font-size: 1em;
    font-weight: 570;
-   padding: 15px;
+   padding: 1em;
    text-align: center;
    color: #fff;
    outline: none;
@@ -170,7 +169,7 @@ main .boton-resolver {
 }
 
 main .boton-resolver:hover {
-   background: linear-gradient(25deg, var(--azul) 25%, var(--azul-oscuro)) 50%;
+   background: linear-gradient(25deg, var(--azul) 50%, var(--azul-claro) 80%);
    border: 2px inset var(--azul-claro);
 }
 
@@ -184,5 +183,25 @@ footer {
 }
 
 footer img {
-   height: 90%;
+   height: 70%;
+}
+
+@media only screen and (min-width: 1200px) {
+   body {
+      grid-template-rows: 7vh 1fr 7vh;
+      font-size: 1.2vw;
+   }
+
+   aside .boton {
+      height: 13%;
+   }
+
+   header {
+      background: var(--azul);
+      font-family: 'Pangolin', cursive;
+      font-size: 3vh;
+      letter-spacing: 1vw;
+      border-radius: 0 0 2vw 0;
+   }
+   
 }
