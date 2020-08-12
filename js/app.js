@@ -8,9 +8,8 @@ let mensajeResultados;
 window.addEventListener("load", () => {
   obtenerDocumento();
   configurarEventos();
-  // TODO: Colocar función ocultar resultados
   ocultarResultados();
-  document.querySelector("main").setAttribute("style", "opacity: 1");
+  animarEntrada();
 });
 
 function obtenerDocumento() {
@@ -37,4 +36,8 @@ function ocultarResultados() {
     const elemento = cajaResultado[i];
     elemento.setAttribute("style", "opacity: 0");
   }
+}
+
+function animarEntrada() {
+  document.querySelector("main").setAttribute("style", "opacity: 1");
 }
