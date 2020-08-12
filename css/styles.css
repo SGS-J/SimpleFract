@@ -194,11 +194,6 @@ main .resolvedor__resultado--reiniciar {
    padding: .5em;
 }
 
-/* TODO: Before para pruebas, eliminarlo después */
-main .resolvedor__resultado-span::before {
-   content: 'Number';
-}
-
 footer {
    grid-column: 1/-1;
    display: flex;

@@ -3,15 +3,13 @@
 class Evento {
   constructor() {
     this.simplificar = () => {
-      if (listoParaSimplificar()) {
-        realizarAlgoritmo();
-        mostrarResultado();
-      } else {
-        mostrarError();
-        reiniciar();
-      }
+      const inputs = document.querySelectorAll(".resolvedor__resolucion input[type='text']");
+      let num1 = inputs[0].nodeValue;
+      let num2 = inputs[1].nodeValue;
+      simplificador.actualizarNumeros(num1, num2);
+      simplificador.comenzarProceso();
     };
-    this.reiniciar = () => reiniciar();
+    this.reiniciar = () => simplificador.reiniciar();
     this.limitarSoloNumeros = (e) => utiles.limitadorANumeros(e);
     this.verificarCopia = (e) => utiles.verificadorDeCopia(e);
   }
@@ -44,44 +42,3 @@ class Utiles {
 
 const utiles = new Utiles();
 const evento = new Evento();
-
-function listoParaSimplificar() {
-  if (inputNumerador.value == "" || inputDenominador.value == "") {
-    camposVacios = true;
-  } else {
-    camposVacios = false;
-  }
-  return !camposVacios;
-}
-
-function realizarAlgoritmo() {
-  // Usamos algoritmo de euclides(Para conseguir el MCD de los dos numeros)
-  numerador = inputNumerador.value;
-  denominador = inputDenominador.value;
-  let mcd = algoritmoEuclides.calcularMCD(numerador, denominador);
-  // Simplificamos
-  numerador /= mcd;
-  denominador /= mcd;
-}
-
-function mostrarResultado() {
-  resultadoNumerador.hidden = false;
-  resultadoDenominador.hidden = false;
-  botonReiniciar.hidden = false;
-  resultadoNumerador.innerHTML = numerador;
-  resultadoDenominador.innerHTML = denominador;
-}
-
-function reiniciar() {
-  resultadoNumerador.hidden = true;
-  resultadoDenominador.hidden = true;
-  botonReiniciar.hidden = true;
-  inputNumerador.value = "";
-  inputDenominador.value = "";
-  numerador = 0;
-  denominador = 0;
-}
-
-function mostrarError() {
-  alert("Ingrese campos validos");
-}

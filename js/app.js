@@ -9,13 +9,14 @@ window.addEventListener("load", () => {
   obtenerDocumento();
   configurarEventos();
   // TODO: Colocar función ocultar resultados
-  document.querySelector("main").style.opacity = "1";
+  ocultarResultados();
+  document.querySelector("main").setAttribute("style", "opacity: 1");
 });
 
 function obtenerDocumento() {
   inputs = document.querySelectorAll(".resolvedor__resolucion input[type='text']");
   botonSimplificar = document.querySelector(".boton-resolver");
-  botonReiniciar = document.querySelector('resolvedor__resultado--reiniciar');
+  botonReiniciar = document.querySelector('.resolvedor__resultado--reiniciar');
   mensajeResultados = document.querySelectorAll('resolvedor__resultado-span');
 }
 
@@ -26,10 +27,13 @@ function configurarEventos() {
     input.addEventListener('paste', evento.verificarCopia);
   }
   botonSimplificar.addEventListener('click', evento.simplificar);
+  botonReiniciar.addEventListener("click", evento.reiniciar);
 }
 
 function ocultarResultados() {
-  resultadoNumerador.hidden = true;
-  resultadoDenominador.hidden = true;
-  botonReiniciar.hidden = true;
+  const cajaResultado = document.querySelector(".resolvedor__resultado").children;
+  for (let i = 0; i < cajaResultado.length; i++) {
+    const elemento = cajaResultado[i];
+    elemento.setAttribute("style", "opacity: 0");
+  }
 }
