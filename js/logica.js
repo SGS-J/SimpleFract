@@ -3,6 +3,7 @@
 let numerador;
 let denominador;
 let camposVacios;
+let valorNegativo;
 let inputsListened;
 
 class AlgoritmoEuclides {
@@ -72,13 +73,22 @@ function listoParaSimplificar() {
 }
 
 function realizarAlgoritmo() {
+  verificarYAsignarValores();
   // Usamos algoritmo de euclides(Para conseguir el MCD de los dos numeros)
-  numerador = inputsListened[0].value;
-  denominador = inputsListened[1].value;
   let mcd = algoritmoEuclides.calcularMCD(numerador, denominador);
   // Simplificamos
   numerador /= mcd;
   denominador /= mcd;
+}
+
+function verificarYAsignarValores() {
+  numerador = inputsListened[0].value;
+  denominador = inputsListened[1].value;
+  // Comprobacion XOR para verificar que tipo de valor se retornara
+  valorNegativo = numerador < 0 ^ denominador < 0;
+  // Pasar a positivo si es posible 
+  numerador *= numerador < 0 ? -1 : 1;
+  denominador *= denominador < 0 ? -1 : 1;
 }
 
 function mostrarResultado() {
@@ -88,8 +98,8 @@ function mostrarResultado() {
     const elemento = compsResultado[i];
     elemento.setAttribute("style", "opacity: 1");
   }
-  compsResultado[0].innerHTML = numerador;
-  compsResultado[1].innerHTML = denominador;
+  compsResultado[0].innerHTML = valorNegativo ? -numerador : numerador;
+  compsResultado[1].innerHTML = valorNegativo ? -denominador : numerador;
 }
 
 function mostrarError() {

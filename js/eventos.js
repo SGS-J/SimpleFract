@@ -4,8 +4,8 @@ class Evento {
   constructor() {
     this.simplificar = () => {
       const inputs = document.querySelectorAll(".resolvedor__resolucion input[type='text']");
-      let num1 = inputs[0].nodeValue;
-      let num2 = inputs[1].nodeValue;
+      let num1 = inputs[0].value;
+      let num2 = inputs[1].value;
       simplificador.actualizarNumeros(num1, num2);
       simplificador.comenzarProceso();
     };
