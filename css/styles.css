@@ -2,22 +2,25 @@
 
 :root {
    --azul-claro: #37DBFF;
+   --azul-medio-claro: #568FEE;
    --azul: #3755FF;
    --azul-oscuro: #132589;
+   --negro-palido: #0023;
+   --gris-claro: #B8BCC2;
 }
 
 * {
    font-family: sans-serif;
 }
 
-* img {
+body img {
    color: #000;
    font-size: .55em;
    font-family: Arial, Helvetica, sans-serif;
    text-shadow: none;
    letter-spacing: normal;
    font-weight: normal;
-   filter: drop-shadow(3px 2px 2.5px #001);
+   filter: drop-shadow(.2em .2em .2em #001);
 }
 
 body {
@@ -25,6 +28,7 @@ body {
    min-height: 100vh;
    grid-template-rows: 3em 1fr 3em;
    grid-template-columns: 1fr 4fr;
+   gap: 2em;
 }
 
 header {
@@ -52,29 +56,35 @@ aside {
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
-   padding-top: 7em;
-   row-gap: 4em;
+   padding-top: 4em;
+   border: 2px solid var(--negro-palido);
+   border-radius: 1em;
+   margin-left: 2em;
 }
 
-aside .boton {
+aside .boton-lateral {
+   display: block;
    width: 100%;
    background: var(--azul);
    outline: none;
    border-radius: 0 200px 200px 0;
-   font-size: 1.5em;
-   color: #fff;
-   padding: 15px 5px;
+   font-size: .8em;
+   padding: .5em;
    text-align: center;
 }
 
 main {
    grid-column: span 1;
-   padding: 7vh 15vw 3vh 5vw;
+   padding: 4em 15vw 12vh 12vw;
    opacity: 0;
    transition: opacity 1.2s;
+   border: 2px solid var(--negro-palido);
+   border-radius: 1em;
+   margin-right: 2em;
 }
 
 main #introducion .titulo {
+   margin-top: 0;
    text-align: center;
 }
 
@@ -170,7 +180,7 @@ main .boton-resolver {
 }
 
 main .boton-resolver:hover {
-   background: linear-gradient(220deg, var(--azul-oscuro) 50%, var(--azul) 80%);
+   background: linear-gradient(25deg, var(--azul), var(--azul-medio-claro));
    border: 2px inset var(--azul-claro);
 }
 
@@ -195,16 +205,20 @@ main .resolvedor__resultado--reiniciar {
 }
 
 footer {
+   position: relative;
    grid-column: 1/-1;
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    background: var(--azul);
-   justify-content: center;
+   justify-content: flex-end;
    align-items: center;
+   padding-right: 4em;
 }
 
 footer img {
+   position: absolute;
    height: 70%;
+   left: 50%;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -219,7 +233,6 @@ footer img {
 
    header {
       background: var(--azul);
-      font-family: 'Pangolin', cursive;
       font-size: 3vh;
       letter-spacing: 1vw;
       border-radius: 0 0 2vw 0;
