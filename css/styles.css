@@ -3,14 +3,16 @@
 :root {
    --azul-claro: #37DBFF;
    --azul-medio-claro: #568FEE;
-   --azul: #3755FF;
+   --azul: #3755FF70;
+   --azul-oscuro-transparente: #132589cf;
    --azul-oscuro: #132589;
    --negro-palido: #0023;
    --gris-claro: #B8BCC2;
+   --hueso: #E3E3E320;
 }
 
 * {
-   font-family: sans-serif;
+   font-family: consolas;
 }
 
 body img {
@@ -21,6 +23,7 @@ body img {
    letter-spacing: normal;
    font-weight: normal;
    filter: drop-shadow(.2em .2em .2em #001);
+   opacity: .6;
 }
 
 body {
@@ -29,6 +32,15 @@ body {
    grid-template-rows: 3em 1fr 3em;
    grid-template-columns: 1fr 4fr;
    gap: 2em;
+   background: var(--azul);
+}
+
+body .fondo-interior {
+   position: fixed;
+   width: 100%;
+   height: 60vh;
+   top: 20%;
+   background: #fffd;
 }
 
 header {
@@ -45,6 +57,7 @@ header {
    font-weight: 580;
    padding-right: 3em;
    border-radius: 0 0 25px 0;
+   z-index: 1000;
 }
 
 header img {
@@ -56,40 +69,67 @@ aside {
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
-   padding-top: 4em;
+   padding-top: 3em;
    border: 2px solid var(--negro-palido);
    border-radius: 1em;
    margin-left: 2em;
+   background: #fff;
+   z-index: 100;
+}
+
+aside ul {
+   color: var(--azul-oscuro);
+   list-style-position: inside;
+   margin-left: 1.2em;
 }
 
 aside .boton-lateral {
-   display: block;
-   width: 100%;
-   background: var(--azul);
+   display: inline-block;
+   width: 80%;
+   background: var(--hueso);
    outline: none;
-   border-radius: 0 200px 200px 0;
+   border: 1px solid var(--negro-palido);
+   border-radius: 200px;
    font-size: .8em;
+   font-family: consolas;
+   letter-spacing: .1em;
    padding: .5em;
+   margin-top: .5em;
    text-align: center;
+   user-select: none;
+   transition: .3s;
+   cursor: pointer;
+}
+
+aside .boton-lateral:hover {
+   background: #fff;
+   color: var(--azul-oscuro);
+   border: 1px solid var(--azul-oscuro);
+   transform: translateX(10%);
 }
 
 main {
    grid-column: span 1;
    padding: 4em 15vw 12vh 12vw;
-   opacity: 0;
-   transition: opacity 1.2s;
    border: 2px solid var(--negro-palido);
    border-radius: 1em;
    margin-right: 2em;
+   background: #fff;
+   z-index: 100;
 }
 
 main #introducion .titulo {
    margin-top: 0;
    text-align: center;
+   color: var(--azul-oscuro);
 }
 
 main #introducion .texto-bienvenida {
    margin-top: 2em;
+}
+
+main #introducion .texto-bienvenida strong {
+   color: var(--azul-oscuro);
 }
 
 main #resolvedor {
@@ -105,7 +145,8 @@ main .resolvedor__instrucciones {
 
 main .resolvedor__instrucciones ol {
    margin-top: 1em;
-   list-style: circle inside;
+   list-style: circle;
+   text-align: justify;
 }
 
 main .resolvedor__resolucion {
@@ -119,15 +160,17 @@ main .resolvedor__resolucion {
 
 main .resolvedor__resolucion--input {
    padding: .4em;
-   outline: 1px double var(--azul-oscuro);
+   border: .03em solid var(--azul-oscuro);
    border-left: 1vw solid var(--azul-oscuro);
    font-size: 1.5em;
+   text-align: center;
    transition: border .3s;
-   color: var(--azul);
+   color: var(--azul-oscuro);
 }
 
 main .input-numerador:focus,
 main .input-denominador:focus {
+   outline: .02em solid var(--azul);
    border-left: 1px solid var(--azul-oscuro);
 }
 
@@ -154,14 +197,13 @@ main .resolvedor__resolucion--mensaje {
 
 @keyframes anim-mensaje {
    0% {
-      transform: scale(1);
       opacity: 1;
    }
 
    100% {
       opacity: 1;
       transform: translateX(5%);
-      background: var(--azul-oscuro);
+      background: var(--azul-medio-claro);
    }
 }
 
@@ -175,13 +217,13 @@ main .boton-resolver {
    color: #fff;
    outline: none;
    border: 2px inset var(--azul-oscuro);
-   background: linear-gradient(25deg, var(--azul-oscuro), var(--azul));
+   background: var(--azul-oscuro);
    transition: none;
 }
 
 main .boton-resolver:hover {
-   background: linear-gradient(25deg, var(--azul), var(--azul-medio-claro));
-   border: 2px inset var(--azul-claro);
+   background: var(--azul-oscuro-transparente);
+   border: 2px inset var(--negro-palido);
 }
 
 main .resolvedor__resultado {
@@ -213,6 +255,7 @@ footer {
    justify-content: flex-end;
    align-items: center;
    padding-right: 4em;
+   z-index: 1000;
 }
 
 footer img {

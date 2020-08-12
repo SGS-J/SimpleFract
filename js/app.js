@@ -39,5 +39,5 @@ function ocultarResultados() {
 }
 
 function animarEntrada() {
-  document.querySelector("main").setAttribute("style", "opacity: 1");
+  
 }
