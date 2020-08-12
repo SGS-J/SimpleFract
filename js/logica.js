@@ -6,25 +6,6 @@ let camposVacios;
 let valorNegativo;
 let inputsListened;
 
-class AlgoritmoEuclides {
-  constructor() {
-    this.calcularMCD = (numeroA, numeroB) => {
-      // Primeros organizamos los numeros de mayor a menor si es necesario
-      if (numeroA < numeroB) {
-        numeroA = numeroA + numeroB;
-        numeroB = numeroA - numeroB;
-        numeroA = numeroA - numeroB;
-      }
-      // Luego aplicamos recursion
-      if (numeroA % numeroB == 0) {
-        return numeroB;
-      } else {
-        return this.calcularMCD(numeroB, numeroA % numeroB);
-      }
-    };
-  }
-}
-
 class Simplificador {
   constructor(num1 = 0, num2 = 0) {
     this.num1 = num1;
@@ -103,5 +84,4 @@ function mostrarError() {
   alert("Ingrese campos validos");
 }
 
-const algoritmoEuclides = new AlgoritmoEuclides();
 const simplificador = new Simplificador();
