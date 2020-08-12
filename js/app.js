@@ -24,6 +24,7 @@ function configurarEventos() {
   for (let i = 0; i < inputs.length; i++) {
     const input = inputs[i];
     input.addEventListener('keypress', evento.limitarSoloNumeros);
+    input.addEventListener('keypress', evento.verificarMenos);
     input.addEventListener('paste', evento.verificarCopia);
   }
   botonSimplificar.addEventListener('click', evento.simplificar);

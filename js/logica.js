@@ -60,9 +60,6 @@ class Simplificador {
   }
 }
 
-const algoritmoEuclides = new AlgoritmoEuclides();
-const simplificador = new Simplificador();
-
 function listoParaSimplificar() {
   if (inputsListened[0].value == "" || inputsListened[1].value == "") {
     camposVacios = true;
@@ -75,7 +72,7 @@ function listoParaSimplificar() {
 function realizarAlgoritmo() {
   verificarYAsignarValores();
   // Usamos algoritmo de euclides(Para conseguir el MCD de los dos numeros)
-  let mcd = algoritmoEuclides.calcularMCD(numerador, denominador);
+  const mcd = algoritmoEuclides.calcularMCD(numerador, denominador);
   // Simplificamos
   numerador /= mcd;
   denominador /= mcd;
@@ -105,3 +102,6 @@ function mostrarResultado() {
 function mostrarError() {
   alert("Ingrese campos validos");
 }
+
+const algoritmoEuclides = new AlgoritmoEuclides();
+const simplificador = new Simplificador();
