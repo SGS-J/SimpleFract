@@ -44,8 +44,18 @@ class Simplificador {
         this.reiniciar();
       }
     };
-    this.reiniciar = 14;
-
+    this.reiniciar = () => {
+      const padResultados = document.querySelector(".resolvedor__resultado")
+        .children;
+      for (let i = 0; i < padResultados.length; i++) {
+        const elemento = padResultados[i];
+        elemento.setAttribute("style", "opacity: 0");
+      }
+      inputsListened[0].value = "";
+      inputsListened[1].value = "";
+      numerador = 0;
+      denominador = 0;
+    };
   }
 }
 
@@ -63,8 +73,8 @@ function listoParaSimplificar() {
 
 function realizarAlgoritmo() {
   // Usamos algoritmo de euclides(Para conseguir el MCD de los dos numeros)
-  numerador = inputsListened[0].nodeValue;
-  denominador = inputsListened[1].nodeValue;
+  numerador = inputsListened[0].value;
+  denominador = inputsListened[1].value;
   let mcd = algoritmoEuclides.calcularMCD(numerador, denominador);
   // Simplificamos
   numerador /= mcd;
