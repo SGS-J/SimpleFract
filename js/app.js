@@ -39,5 +39,7 @@ function ocultarResultados() {
 }
 
 function animarEntrada() {
-  
+  const introduccion = document.querySelector("#introducion");
+  introduccion.setAttribute("style", "margin-top: 0");
+  introduccion.setAttribute("style", "opacity: 1");
 }

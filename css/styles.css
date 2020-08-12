@@ -38,7 +38,7 @@ body {
 body .fondo-interior {
    position: fixed;
    width: 100%;
-   height: 60vh;
+   height: 70vh;
    top: 20%;
    background: #fffd;
 }
@@ -118,6 +118,12 @@ main {
    z-index: 100;
 }
 
+main #introduccion {
+   margin-top: -2em;
+   opacity: 0;
+   transition: .3s;
+}
+
 main #introducion .titulo {
    margin-top: 0;
    text-align: center;
@@ -143,10 +149,19 @@ main .resolvedor__instrucciones {
    align-self: center;
 }
 
-main .resolvedor__instrucciones ol {
+main .resolvedor__instrucciones b{
+   color: var(--azul-oscuro-transparente);
+}
+
+main .resolvedor__instrucciones ul {
    margin-top: 1em;
    list-style: circle;
    text-align: justify;
+   color: var(--azul-oscuro);
+}
+
+main .resolvedor__instrucciones span {
+   color: #000;
 }
 
 main .resolvedor__resolucion {
@@ -162,6 +177,7 @@ main .resolvedor__resolucion--input {
    padding: .4em;
    border: .03em solid var(--azul-oscuro);
    border-left: 1vw solid var(--azul-oscuro);
+   border-right: 1vw solid var(--azul-oscuro);
    font-size: 1.5em;
    text-align: center;
    transition: border .3s;
@@ -172,6 +188,7 @@ main .input-numerador:focus,
 main .input-denominador:focus {
    outline: .02em solid var(--azul);
    border-left: 1px solid var(--azul-oscuro);
+   border-right: 1px solid var(--azul-oscuro);
 }
 
 main .input-numerador:focus~.mensaje-numerador,
@@ -203,7 +220,7 @@ main .resolvedor__resolucion--mensaje {
    100% {
       opacity: 1;
       transform: translateX(5%);
-      background: var(--azul-medio-claro);
+      background: var(--azul-oscuro-transparente);
    }
 }
 
