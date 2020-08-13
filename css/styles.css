@@ -61,7 +61,7 @@ header {
 }
 
 header img {
-   height: 90%;
+   height: 80%;
    margin-left: 5em;
 }
 
@@ -119,22 +119,23 @@ main {
 }
 
 main #introduccion {
-   margin-top: -2em;
+   position: relative;
+   transform: translateY(-40%);
    opacity: 0;
-   transition: .3s;
+   transition: transform 1s, opacity 1s linear;
 }
 
-main #introducion .titulo {
+main #introduccion .titulo {
    margin-top: 0;
    text-align: center;
    color: var(--azul-oscuro);
 }
 
-main #introducion .texto-bienvenida {
+main #introduccion .texto-bienvenida {
    margin-top: 2em;
 }
 
-main #introducion .texto-bienvenida strong {
+main #introduccion .texto-bienvenida strong {
    color: var(--azul-oscuro);
 }
 
@@ -142,9 +143,24 @@ main #resolvedor {
    display: grid;
    grid-template-rows: 1fr 1fr;
    grid-template-columns: 1fr 1fr;
+   transform: translateY(20%);
+   opacity: 0;
+   transition: transform 1s, opacity 1s ease .5s;
+}
+
+main #resolvedor::after {
+   content: '';
+   margin: 0;
+   width: 9.3em;
+   height: .1em;
+   background: #0000aa98;
+   position: absolute;
+   top: calc(50% + 3.5em);
+   left: 3.2%;
 }
 
 main .resolvedor__instrucciones {
+   position: relative;
    grid-column: span 2;
    align-self: center;
 }
