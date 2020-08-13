@@ -76,8 +76,9 @@ function mostrarResultado() {
     const elemento = compsResultado[i];
     elemento.setAttribute("style", "opacity: 1");
   }
-  compsResultado[0].innerHTML = valorNegativo ? -numerador : numerador;
-  compsResultado[1].innerHTML = valorNegativo ? -denominador : numerador;
+  const resultados = document.querySelector(".resolvedor__resultado-span").children;
+  resultados[0].innerHTML = valorNegativo ? -numerador : numerador;
+  resultados[1].innerHTML = valorNegativo ? -denominador : numerador;
 }
 
 function mostrarError() {

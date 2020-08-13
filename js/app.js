@@ -3,11 +3,10 @@
 let inputs;
 let botonSimplificar;
 let botonReiniciar;
-let mensajeResultados;
 
 window.addEventListener("load", () => {
   obtenerDocumento();
-  //ocultarResultados();
+  ocultarResultados();
   configurarEventos();
   animarEntrada();
 });
@@ -18,7 +17,6 @@ function obtenerDocumento() {
   );
   botonSimplificar = document.querySelector(".boton-resolver");
   botonReiniciar = document.querySelector(".resolvedor__resultado--reiniciar");
-  mensajeResultados = document.querySelectorAll("resolvedor__resultado-span");
 }
 
 function configurarEventos() {
