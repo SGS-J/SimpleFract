@@ -153,9 +153,9 @@ main #resolvedor::after {
    margin: 0;
    width: 9.3em;
    height: .1em;
-   background: #0000aa98;
+   background: var(--azul-oscuro);
    position: absolute;
-   top: calc(50% + 3.5em);
+   top: calc(50% + 3.57em);
    left: 3.2%;
 }
 
@@ -262,14 +262,29 @@ main .boton-resolver:hover {
 main .resolvedor__resultado {
    display: flex;
    flex-direction: column;
+   justify-self: flex-start;
    font-size: 1.5em;
    row-gap: 1em;
 }
 
 main .resolvedor__resultado-span {
+   position: relative;
    display: block;
-   background: var(--azul-claro);
    padding: 10px;
+   text-align: center;
+   color: var(--azul-oscuro);
+}
+
+main .resolvedor__resultado-span:first-child::after {
+   content: '';
+   margin: 0;
+   width: 4em;
+   height: .1em;
+   background: var(--azul-oscuro);
+   position: absolute;
+   top: 120%;
+   left: 50%;
+   transform: translateX(-50%);
 }
 
 main .resolvedor__resultado--reiniciar {
