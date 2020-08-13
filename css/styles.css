@@ -225,6 +225,7 @@ main .resolvedor__resolucion--mensaje {
    color: #fff;
    font-family: consolas;
    background: var(--azul);
+   cursor: default;
    clip-path: polygon(100% 0%, 85% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 }
 
@@ -240,6 +241,19 @@ main .resolvedor__resolucion--mensaje {
    }
 }
 
+main .mensaje-error {
+   position: absolute;
+   display: flex;
+   flex-flow: row wrap;
+   padding: 0 2em;
+   text-align: center;
+   top: 14%;
+   left: 45%;
+   height: 4em;
+   opacity: 1;
+   background: var(--azul-oscuro-transparente);
+}
+
 main .boton-resolver {
    justify-self: center;
    font-family: consolas;
@@ -251,7 +265,7 @@ main .boton-resolver {
    outline: none;
    border: 2px inset var(--azul-oscuro);
    background: var(--azul-oscuro);
-   transition: none;
+   cursor: pointer;
 }
 
 main .boton-resolver:hover {

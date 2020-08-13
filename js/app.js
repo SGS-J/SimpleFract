@@ -6,7 +6,7 @@ let botonReiniciar;
 
 window.addEventListener("load", () => {
   obtenerDocumento();
-  ocultarResultados();
+  ocultarEtiquetas();
   configurarEventos();
   animarEntrada();
 });
@@ -30,13 +30,14 @@ function configurarEventos() {
   botonReiniciar.addEventListener("click", evento.reiniciar);
 }
 
-function ocultarResultados() {
+function ocultarEtiquetas() {
   const cajaResultado = document.querySelector(".resolvedor__resultado")
     .children;
   for (let i = 0; i < cajaResultado.length; i++) {
     const elemento = cajaResultado[i];
     elemento.setAttribute("style", "opacity: 0");
   }
+  //document.querySelector(".mensaje-error").setAttribute("style", "opacity: 0");
 }
 
 function animarEntrada() {
