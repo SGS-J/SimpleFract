@@ -166,7 +166,7 @@ main .resolvedor__instrucciones {
 }
 
 main .resolvedor__instrucciones b {
-   color: var(--azul-oscuro-transparente);
+   color: var(--azul-oscuro);
 }
 
 main .resolvedor__instrucciones ul {
@@ -342,6 +342,21 @@ footer img {
    position: absolute;
    height: 70%;
    left: 50%;
+}
+
+footer span {
+   font-size: .8em;
+   opacity: .5;
+   
+}
+
+footer span a {
+   text-decoration: underline;
+   color: #004;
+}
+
+footer span a:hover {
+   color: #fff;
 }
 
 @media only screen and (min-width: 1200px) {
