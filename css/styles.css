@@ -109,6 +109,7 @@ aside .boton-lateral:hover {
 }
 
 main {
+   position: relative;
    grid-column: span 1;
    padding: 4em 15vw 12vh 12vw;
    border: 2px solid var(--negro-palido);
@@ -116,6 +117,7 @@ main {
    margin-right: 2em;
    background: #fff;
    z-index: 100;
+   min-height: 40em;
 }
 
 main #introduccion {
@@ -324,6 +326,23 @@ main .resolvedor__resultado--reiniciar {
 main .resolvedor__resultado--reiniciar:hover {
    background: var(--azul-oscuro-transparente);
    border: 2px inset var(--negro-palido);
+}
+
+main #explicacion {
+   display: flex;
+   flex-flow: column wrap;
+   justify-content: space-around;
+   row-gap: 1em;
+   padding-top: 3em;
+   transform: translateY(-10%);
+}
+
+main .explicacion__titulo {
+   color: var(--azul-oscuro);
+}
+
+main .explicacion-texto i {
+   color: var(--azul-oscuro);
 }
 
 footer {

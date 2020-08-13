@@ -13,6 +13,8 @@ class Evento {
     };
     this.removerError = () => simplificador.quitarError();
     this.reiniciar = () => simplificador.reiniciar();
+    this.mostrarExplicacion = () => documentoActual.mostrarFuncionamiento();
+    this.mostrarSimplificar = () => documentoActual.mostrarSimplificador();
     this.limitarSoloNumeros = (e) => utiles.limitadorANumeros(e);
     this.verificarMenos = (e) => utiles.limitadorSignoMenos(e);
     this.verificarCopia = (e) => utiles.verificadorDeCopia(e);
