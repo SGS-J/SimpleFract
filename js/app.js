@@ -25,6 +25,7 @@ function configurarEventos() {
     input.addEventListener("keypress", evento.limitarSoloNumeros);
     input.addEventListener("keypress", evento.verificarMenos);
     input.addEventListener("paste", evento.verificarCopia);
+    input.addEventListener("focus", evento.removerError);
   }
   botonSimplificar.addEventListener("click", evento.simplificar);
   botonReiniciar.addEventListener("click", evento.reiniciar);
@@ -37,7 +38,7 @@ function ocultarEtiquetas() {
     const elemento = cajaResultado[i];
     elemento.setAttribute("style", "opacity: 0");
   }
-  //document.querySelector(".mensaje-error").setAttribute("style", "opacity: 0");
+  document.querySelector(".mensaje-error").setAttribute("style", "opacity: 0");
 }
 
 function animarEntrada() {

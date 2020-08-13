@@ -165,7 +165,7 @@ main .resolvedor__instrucciones {
    align-self: center;
 }
 
-main .resolvedor__instrucciones b{
+main .resolvedor__instrucciones b {
    color: var(--azul-oscuro-transparente);
 }
 
@@ -250,8 +250,7 @@ main .mensaje-error {
    top: 14%;
    left: 45%;
    height: 4em;
-   opacity: 1;
-   background: var(--azul-oscuro-transparente);
+   background: var(--azul-oscuro);
 }
 
 main .boton-resolver {
@@ -287,7 +286,7 @@ main .resolvedor__resultado-span {
    row-gap: 1.2em;
 }
 
-main .resolvedor__resultado-span span{
+main .resolvedor__resultado-span span {
    position: relative;
    display: block;
    padding: .5em 0;

@@ -11,6 +11,7 @@ class Evento {
       simplificador.actualizarNumeros(num1, num2);
       simplificador.comenzarProceso();
     };
+    this.removerError = () => simplificador.quitarError();
     this.reiniciar = () => simplificador.reiniciar();
     this.limitarSoloNumeros = (e) => utiles.limitadorANumeros(e);
     this.verificarMenos = (e) => utiles.limitadorSignoMenos(e);
