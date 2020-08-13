@@ -70,12 +70,12 @@ function verificarYAsignarValores() {
 }
 
 function mostrarResultado() {
-  const compsResultado = document.querySelector(".resolvedor__resultado")
-    .children;
+  const compsResultado = document.querySelector(".resolvedor__resultado").children;
   for (let i = 0; i < compsResultado.length; i++) {
     const elemento = compsResultado[i];
     elemento.setAttribute("style", "opacity: 1");
   }
+  animarFondo();
   const resultados = document.querySelector(".resolvedor__resultado-span").children;
   resultados[0].innerHTML = valorNegativo ? -numerador : numerador;
   resultados[1].innerHTML = valorNegativo ? -denominador : numerador;
@@ -83,6 +83,15 @@ function mostrarResultado() {
 
 function mostrarError() {
   alert("Ingrese campos validos");
+}
+
+function animarFondo() {
+  const cajaResultado = document.querySelector(".resolvedor__resultado");
+  cajaResultado.style.background = "#568FEE";
+  setTimeout(() => {
+    cajaResultado.style.transition = "background .2s ease-in";
+    cajaResultado.style.background = "transparent";
+  }, 200);
 }
 
 const simplificador = new Simplificador();

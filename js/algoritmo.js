@@ -3,7 +3,7 @@
 class AlgoritmoEuclides {
    constructor() {
      this.calcularMCD = (numeroA, numeroB) => {
-       // Primeros organizamos los numeros de mayor a menor si es necesario
+       // Organizamos los numeros de mayor a menor si es necesario
        if (numeroA < numeroB) {
          numeroA = numeroA + numeroB;
          numeroB = numeroA - numeroB;

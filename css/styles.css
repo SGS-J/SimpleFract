@@ -262,23 +262,24 @@ main .boton-resolver:hover {
 main .resolvedor__resultado {
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
    justify-self: flex-start;
-   font-size: 1.5em;
-   row-gap: 1em;
+   border-radius: 1em 1em 0 0;
 }
 
 main .resolvedor__resultado-span {
    display: flex;
    flex-direction: column;
-   row-gap: 1em;
+   row-gap: 1.2em;
 }
 
 main .resolvedor__resultado-span span{
    position: relative;
    display: block;
-   padding: 10px;
+   padding: .5em 0;
    text-align: center;
    color: var(--azul-oscuro);
+   font-size: 1.5em;
 }
 
 main .resolvedor__resultado-span span:first-child::after {
@@ -288,15 +289,16 @@ main .resolvedor__resultado-span span:first-child::after {
    height: .1em;
    background: var(--azul-oscuro);
    position: absolute;
-   top: 122%;
+   top: 115%;
    left: 50%;
    transform: translateX(-50%);
 }
 
 main .resolvedor__resultado--reiniciar {
    justify-self: center;
+   align-self: center;
    font-family: consolas;
-   font-size: .6em;
+   font-size: 1em;
    font-weight: 570;
    padding: 1em;
    text-align: center;
