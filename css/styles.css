@@ -329,6 +329,8 @@ main .resolvedor__resultado--reiniciar:hover {
 }
 
 main #explicacion {
+   position: absolute;
+   top: -50%;
    display: flex;
    flex-flow: column wrap;
    justify-content: space-around;
