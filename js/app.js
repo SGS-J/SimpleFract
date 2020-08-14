@@ -28,6 +28,7 @@ function configurarEventos() {
     const input = inputs[i];
     input.addEventListener("keypress", evento.limitarSoloNumeros);
     input.addEventListener("keypress", evento.verificarMenos);
+    input.addEventListener("keypress", evento.limitarCantidadDeNumeros);
     input.addEventListener("paste", evento.verificarCopia);
     input.addEventListener("focus", evento.removerError);
   }

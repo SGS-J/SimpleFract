@@ -13,8 +13,11 @@ class Evento {
     };
     this.removerError = () => simplificador.quitarError();
     this.reiniciar = () => simplificador.reiniciar();
+
     this.mostrarExplicacion = () => documentoActual.mostrarFuncionamiento();
     this.mostrarSimplificar = () => documentoActual.mostrarSimplificador();
+
+    this.limitarCantidadDeNumeros = (e) => utiles.limitadorDeCaracteres(e, 5);
     this.limitarSoloNumeros = (e) => utiles.limitadorANumeros(e);
     this.verificarMenos = (e) => utiles.limitadorSignoMenos(e);
     this.verificarCopia = (e) => utiles.verificadorDeCopia(e);
@@ -30,6 +33,7 @@ class Utiles {
         e.preventDefault();
       }
     };
+
     this.limitadorSignoMenos = (e) => {
       const numerosEscritos = e.target.value;
       if (e.charCode == 45) {
@@ -38,26 +42,38 @@ class Utiles {
         }
       }
     };
+
     this.verificadorDeCopia = (e) => {
       const copiaActual = e.clipboardData.getData("text");
-      for (let i = 0; i < copiaActual.length; i++) {
-        const valorNegativo = copiaActual.charAt(0) == "-";
-        const codigoLetra = copiaActual.charAt(i).charCodeAt(0);
-        const letraValida =
-          (codigoLetra >= 48 && codigoLetra <= 57) || codigoLetra == 45;
+      if (copiaActual.length > 6) {
+        e.preventDefault();
+      } else {
+        for (let i = 0; i < copiaAdaptada.length; i++) {
+          const valorNegativo = copiaAdaptada.charAt(0) == "-";
+          const codigoLetra = copiaAdaptada.charAt(i).charCodeAt(0);
+          const letraValida =
+            (codigoLetra >= 48 && codigoLetra <= 57) || codigoLetra == 45;
 
-        function signoMenosCorrecto() {
-          if (valorNegativo) {
-            return i == 0 || copiaActual.charAt(i) != "-";
-          } else {
-            return !copiaActual.includes("-");
+          function signoMenosCorrecto() {
+            if (valorNegativo) {
+              return i == 0 || copiaAdaptada.charAt(i) != "-";
+            } else {
+              return !copiaAdaptada.includes("-");
+            }
+          }
+
+          if (!letraValida || !signoMenosCorrecto()) {
+            e.preventDefault();
+            break;
           }
         }
+      }
+    };
 
-        if (!letraValida || !signoMenosCorrecto()) {
-          e.preventDefault();
-          break;
-        }
+    this.limitadorDeCaracteres = (e, limite = 0) => {
+      const textoActual = e.target.value;
+      if (textoActual.length > limite) {
+        e.preventDefault();
       }
     };
   }
